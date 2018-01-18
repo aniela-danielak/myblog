@@ -1,0 +1,36 @@
+<% include ./partials/header.ejs %>
+
+<% posts.forEach(function(post){ %>
+    <div class="container">
+        <img class ="thumbnail" src="<%= post.image %>">
+        <div class="title">
+            <h2><%= post.title %></h2>
+        </div>
+        
+        <div class="credits">
+            <span>Created on <%= post.created.toDateString() %></span>
+            <span>by <%= post.author %></span>
+        </div>
+        
+        <div class="text">
+            <p><%- post.body.substring(0, 500) %>...</p>
+        </div>
+        
+        <a class="btn btn-lg btn-default read" href="/posts/<%=post._id%>">Read More</a>
+    </div>
+
+<% }); %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include ./partials/footer.ejs %>

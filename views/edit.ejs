@@ -1,0 +1,29 @@
+<% include ./partials/header.ejs %>
+
+<div class="container">
+    
+    <div class="title"><h1>EDIT POST</h1></div>
+    <div>
+    <form action="/posts/<%=post._id%>?_method=PUT" method="POST">
+        <div><label>Title</label><input type="text" name="post[title]" value="<%=post.title%>"></div>
+        <div><label>Image URL</label><input type="text" name="post[image]" value="<%=post.image%>"></div>
+        <div><label>Author</label><input type="text" name="post[author]" value="<%=post.author%>"></div>
+        <div><label>Your post</label><textarea name="post[body]"><%-post.body%></textarea></div>
+        <div><button class="btn btn-lg btn-primary read">Submit</button></div>
+        
+        
+        
+    </form>
+    </div>
+    
+    
+    
+</div>
+
+
+
+
+
+
+
+<% include ./partials/footer.ejs %>
